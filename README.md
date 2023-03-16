@@ -1,19 +1,22 @@
 # kontinentalist-rest-api
 
-Part 2 of the technical assessment for Kontinentalist.
+Technical assessment for Kontinentalist.
+
+The API server is built with Laravel, and the frontend is built with Vue.js and integrated with Inertia.js. 
 
 ## User Guide
-If you do not wish to host the server locally, you may send the requests to my API server hosted
-on http://146.190.193.16:8000 instead.
+If you do not wish to host the server locally, you may view the stories and send requests to my API server hosted
+at http://146.190.193.16:8000 instead.
 
 ## Developer Guide
-This section will guide you through the steps to get the API server up and running.
+This section will guide you through the steps to get both the API and frontend servers up and running.
 
 ### Pre-requisites
 You should have the following installed on your machine before you proceed:
 - [*PHP*](https://www.php.net/manual/en/install.php) 8.2.3 or above
 - [*Composer*](https://getcomposer.org/download/) 2.5.4 or above
 - [*SQLite*](https://www.sqlite.org/download.html) 3.41.1 or above
+- [*npm*](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 9.4.0 or above
 
 ### Setup
 1. Clone the repository.
@@ -27,6 +30,7 @@ cd kontinentalist-rest-api
 3. Install the dependencies.
 ```
 composer install
+npm install
 ```
 4. Copy the `.env.example` file to `.env`.
 ```
@@ -40,6 +44,10 @@ php artisan migrate
 6. Start the API server.
 ```
 php artisan serve
+```
+7. **In another terminal**, start the frontend server.
+```
+npm run dev
 ```
 
 ## API Reference
