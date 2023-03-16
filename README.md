@@ -36,18 +36,22 @@ npm install
 ```
 cp .env.example .env
 ```
-5. Create the database for the posts. You will be prompted whether to create the SQLite database
+5. Generate the application key.
+```
+php artisan key:generate
+```
+6. Create the database for the posts. You will be prompted whether to create the SQLite database
    file. Enter `yes` to proceed.
 ```
 php artisan migrate
 # If the database driver cannot be found and you're on Ubuntu, run the following command:
 sudo apt install php-sqlite3
 ```
-6. Start the API server.
+7. Start the API server.
 ```
 php artisan serve
 ```
-7. **In another terminal**, start the frontend server.
+8. **In another terminal**, start the frontend server.
 ```
 npm run dev
 ```
