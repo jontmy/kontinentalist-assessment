@@ -40,6 +40,8 @@ cp .env.example .env
    file. Enter `yes` to proceed.
 ```
 php artisan migrate
+# If the database driver cannot be found and you're on Ubuntu, run the following command:
+sudo apt install php-sqlite3
 ```
 6. Start the API server.
 ```
