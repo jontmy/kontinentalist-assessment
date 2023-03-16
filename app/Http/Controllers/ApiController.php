@@ -15,6 +15,7 @@ class ApiController extends Controller
 
     public function retrievePost($id)
     {
+        // Check that the post exists.
         if (!Post::where('id', $id)->exists()) {
             return response()->json([
                 "message" => "Post not found."
@@ -26,6 +27,12 @@ class ApiController extends Controller
 
     public function createPost(Request $request)
     {
+        // Validate the request - title and content are required.
+        if (empty($request->title) || empty($request->content)) {
+            return response()->json([
+                "message" => "Please fill both the `title` and `content` fields."
+            ], 422);
+        }
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
@@ -38,6 +45,13 @@ class ApiController extends Controller
 
     public function updatePost(Request $request, $id)
     {
+        // Validate the request - either the title or content is required.
+        if (empty($request->title) && empty($request->content)) {
+            return response()->json([
+                "message" => "Please fill either the `title` or `content` field."
+            ], 422);
+        }
+        // Check that the post exists.
         if (!Post::where('id', $id)->exists()) {
             return response()->json([
                 "message" => "Post not found."
@@ -55,6 +69,7 @@ class ApiController extends Controller
 
     public function deletePost($id)
     {
+        // Check that the post exists.
         if (!Post::where('id', $id)->exists()) {
             return response()->json([
                 "message" => "Post not found."
