@@ -55,6 +55,8 @@ php artisan serve
 ```
 npm run dev
 ```
+9. Open your browser and navigate to http://localhost:8000 to view the stories on the frontend.
+10. Queries can also be made to the API server at http://localhost:8000/; see the API reference below.
 
 ## API Reference
 The following endpoints are defined in `app/Http/Controllers/ApiController.php`.
