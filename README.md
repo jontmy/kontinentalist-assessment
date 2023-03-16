@@ -21,11 +21,11 @@ You should have the following installed on your machine before you proceed:
 ### Setup
 1. Clone the repository.
 ```
-git clone https://github.com/jontmy/kontinentalist-rest-api.git
+git clone https://github.com/jontmy/kontinentalist-assessment.git
 ```
 2. Navigate to the project directory.
 ```
-cd kontinentalist-rest-api
+cd kontinentalist-assessment
 ```
 3. Install the dependencies.
 ```
